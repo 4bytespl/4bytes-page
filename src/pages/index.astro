@@ -1,16 +1,76 @@
 ---
+import { Code } from "astro:components";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const code = `
+  import hre from "hardhat";
+  async function main() {
+    const Factory = await hre.ethers.getContractFactory("Factory");
+    const factory = await Factory.deploy();
+    console.log("factory deployed at address: ", await factory.getAddress());
+    const artifact = await hre.artifacts.readArtifact("Factory");
+    console.log("Factory ABI:", JSON.stringify(artifact.abi, null, 2));
+  }
+  async function getCampaignAbi() {
+    const artifact = await hre.artifacts.readArtifact("Campaign");
+    console.log("Campaign ABI:", JSON.stringify(artifact.abi, null, 2));
+  }
+`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <header class="flex items-center justify-between mb-32">
+    <div class="flex flex-col gap-2">
+      <h1 class="font-black text-2xl">4Bytes</h1>
+      <p class="text-xs text-muted">
+        Blockchain, Solidity i Kryptowaluty | Nauka Programowania
+      </p>
+    </div>
+    <nav>
+      <ul class="list-none flex gap-12">
+        <li>
+          <a href="#o-nas">O nas</a>
+        </li>
+        <li>
+          <a href="#documentation">Dokumentacja</a>
+        </li>
+        <li>
+          <a href="#function">Cechy</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="px-16">
+    <section class="mb-32 justify-between grid grid-cols-12">
+      <div class="flex flex-col gap-6 col-span-6">
+        <h1 class="text-5xl tracking-1 font-extrabold">
+          Przygotuj z nami{' '}
+          <span class="text-primary landing-highlight">pyszny</span> system
+          kopania
+        </h1>
+        <p class="text-muted max-w-xl">
+          W 4Bytes poznasz technologię blockchain od podstaw, zrozumiesz zasady
+          decentralizacji i nauczysz się tworzyć smart kontrakty w języku
+          Solidity. Zdobędziesz praktyczne umiejętności w zakresie zdalnego
+          zarządzania serwerami oraz konfiguracji środowisk do kopania
+          kryptowalut
+        </p>
+
+        <button class="bg-primary w-fit px-6 py-4 cursor-pointer text-background rounded-4xl hover: text-gray-500">
+          Rozpocznij naukę
+        </button>
+      </div>
+
+      <div class="col-span-6 w-full overflow-hidden">
+        <Code
+          code={code}
+          lang="solidity"
+          theme="night-owl"
+          wrap
+          class="max-w-2xl"
+        />
+      </div>
+    </section>
+  </main>
+</BaseLayout>
