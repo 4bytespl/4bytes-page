@@ -11,6 +11,7 @@
   --color-muted: #949494;
   --color-box: #4f4f4f;
   --color-primary: #ffc91f;
+  --color-primary-muted: #eeb80e;
   --color-foreground: #ffffff;
   --color-accent: #4af626;
 
@@ -29,6 +30,10 @@
     font-family: var(--font-mono);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+  }
+  body::selection {
+    background-color: var(--color-primary-muted);
+    color: var(--color-foreground);
   }
 
   @media (prefers-reduced-motion: reduce) {

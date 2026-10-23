@@ -28,13 +28,13 @@ const code = `
     </div>
     <nav>
       <ul class="list-none flex gap-12">
-        <li>
+        <li class="transition hover:opacity-85 hover:-translate-y-0.5">
           <a href="#o-nas">O nas</a>
         </li>
-        <li>
+        <li class="transition hover:opacity-85 hover:-translate-y-0.5">
           <a href="#documentation">Dokumentacja</a>
         </li>
-        <li>
+        <li class="transition hover:opacity-85 hover:-translate-y-0.5">
           <a href="#function">Cechy</a>
         </li>
       </ul>
@@ -57,19 +57,13 @@ const code = `
           kryptowalut
         </p>
 
-        <button class="bg-primary w-fit px-6 py-4 cursor-pointer text-background rounded-4xl hover: text-gray-500">
+        <button class="bg-primary w-fit px-6 py-4 cursor-pointer text-background rounded-4xl transition hover:-translate-y-0.5 hover:bg-primary-muted">
           Rozpocznij naukę
         </button>
       </div>
 
       <div class="col-span-6 w-full overflow-hidden">
-        <Code
-          code={code}
-          lang="solidity"
-          theme="night-owl"
-          wrap
-          class="max-w-2xl"
-        />
+        <Code code={code} lang="ts" theme="min-dark" wrap class="max-w-2xl" />
       </div>
     </section>
   </main>
