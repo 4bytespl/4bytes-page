@@ -9,29 +9,14 @@ import { defineConfig, fontProviders } from "astro/config";
 export default defineConfig({
 	prefetch: true,
 	vite: {
-		server: {
-			allowedHosts: true,
-		},
+		// Only for local development with cloudflare tunnel
+		// server: {
+		// 	allowedHosts: true,
+		// },
 		plugins: [tailwindcss()],
 	},
 
 	fonts: [
-		//   {
-		// 	provider: fontProviders.fontsource(),
-		// 	name: "IBM Plex Sans",
-		// 	cssVariable: "--font-sans",
-		// 	weights: [400, 600],
-		// 	styles: ["normal"],
-		// 	subsets: ["latin"],
-		// },
-		// {
-		// 	provider: fontProviders.fontsource(),
-		// 	name: "IBM Plex Mono",
-		// 	cssVariable: "--font-mono",
-		// 	weights: [400],
-		// 	styles: ["normal"],
-		// 	subsets: ["latin"],
-		// },
 		{
 			provider: fontProviders.fontsource(),
 			name: "Geist",

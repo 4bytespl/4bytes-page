@@ -1,27 +1,31 @@
 ---
 import { Code } from "astro:components";
+import Terminal from "../components/Terminal.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const code = `
-  import hre from "hardhat";
-  async function main() {
-    const Factory = await hre.ethers.getContractFactory("Factory");
-    const factory = await Factory.deploy();
-    console.log("factory deployed at address: ", await factory.getAddress());
-    const artifact = await hre.artifacts.readArtifact("Factory");
-    console.log("Factory ABI:", JSON.stringify(artifact.abi, null, 2));
-  }
-  async function getCampaignAbi() {
-    const artifact = await hre.artifacts.readArtifact("Campaign");
-    console.log("Campaign ABI:", JSON.stringify(artifact.abi, null, 2));
-  }
+const code = `import hre from "hardhat";
+  
+async function main() {
+  const Factory = await hre.ethers.getContractFactory("Factory");
+  const factory = await Factory.deploy();
+  console.log("factory deployed at address: ", await factory.getAddress());
+  const artifact = await hre.artifacts.readArtifact("Factory");
+  console.log("Factory ABI:", JSON.stringify(artifact.abi, null, 2));
+}
+
+async function getCampaignAbi() {
+  const artifact = await hre.artifacts.readArtifact("Campaign");
+  console.log("Campaign ABI:", JSON.stringify(artifact.abi, null, 2));
+}
 `;
 ---
 
 <BaseLayout>
   <header class="flex items-center justify-between mb-32">
     <div class="flex flex-col gap-2">
-      <h1 class="font-black text-2xl">4Bytes</h1>
+      <a class="font-black text-2xl" href="">
+        <img src="/logo.png" alt="4Bytes Logo" class="h-12 inline-block" />
+      </a>
       <p class="text-xs text-muted">
         Blockchain, Solidity i Kryptowaluty | Nauka Programowania
       </p>
@@ -63,7 +67,9 @@ const code = `
       </div>
 
       <div class="col-span-6 w-full overflow-hidden">
-        <Code code={code} lang="ts" theme="min-dark" wrap class="max-w-2xl" />
+        <Terminal title="deploy.ts">
+          <Code code={code} lang="ts" theme="min-dark" wrap />
+        </Terminal>
       </div>
     </section>
   </main>
