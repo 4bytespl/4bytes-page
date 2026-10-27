@@ -21,56 +21,258 @@ async function getCampaignAbi() {
 ---
 
 <BaseLayout>
-  <header class="flex items-center justify-between mb-32">
-    <div class="flex flex-col gap-2">
-      <a class="font-black text-2xl" href="">
-        <img src="/logo.png" alt="4Bytes Logo" class="h-12 inline-block" />
-      </a>
-      <p class="text-xs text-muted">
-        Blockchain, Solidity i Kryptowaluty | Nauka Programowania
-      </p>
-    </div>
-    <nav>
-      <ul class="list-none flex gap-12">
-        <li class="transition hover:opacity-85 hover:-translate-y-0.5">
-          <a href="#o-nas">O nas</a>
-        </li>
-        <li class="transition hover:opacity-85 hover:-translate-y-0.5">
-          <a href="#documentation">Dokumentacja</a>
-        </li>
-        <li class="transition hover:opacity-85 hover:-translate-y-0.5">
-          <a href="#function">Cechy</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+	<header class="flex items-center justify-between mb-32">
+		<div class="flex flex-col gap-2">
+			<a class="font-black text-2xl" href="/">
+				<img
+					src="/logo.png"
+					alt="4Bytes Logo"
+					class="h-12 inline-block"
+				/>
+			</a>
+			<p class="text-xs text-muted">
+				Blockchain, Solidity i Kryptowaluty | Nauka
+				Programowania
+			</p>
+		</div>
+		<nav>
+			<ul class="list-none flex gap-12">
+				<li class="transition hover:opacity-85 hover:-translate-y-0.5">
+					<a href="#o-nas">O nas</a>
+				</li>
+				<li class="transition hover:opacity-85 hover:-translate-y-0.5">
+					<a href="#documentation">
+						Dokumentacja
+					</a>
+				</li>
+				<li class="transition hover:opacity-85 hover:-translate-y-0.5">
+					<a href="#function">Cechy</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
-  <main class="px-16">
-    <section class="mb-32 justify-between grid grid-cols-12">
-      <div class="flex flex-col gap-6 col-span-6">
-        <h1 class="text-5xl tracking-1 font-extrabold">
-          Przygotuj z nami{" "}
-          <span class="text-primary landing-highlight">pyszny</span> system
-          kopania
-        </h1>
-        <p class="text-muted max-w-xl">
-          W 4Bytes poznasz technologię blockchain od podstaw, zrozumiesz zasady
-          decentralizacji i nauczysz się tworzyć smart kontrakty w języku
-          Solidity. Zdobędziesz praktyczne umiejętności w zakresie zdalnego
-          zarządzania serwerami oraz konfiguracji środowisk do kopania
-          kryptowalut
-        </p>
+	<main class="px-16">
+		<section class="mb-32 justify-between flex">
+			<div class="flex flex-col gap-6 col-span-6 flex-1">
+				<h1 class="text-5xl tracking-1 font-extrabold">
+					Przygotuj z nami{" "}
+					<span class="text-primary landing-highlight">
+						pyszny
+					</span>{" "}
+					system kopania
+				</h1>
+				<p class="text-muted max-w-xl">
+					W 4Bytes poznasz technologię blockchain
+					od podstaw, zrozumiesz zasady
+					decentralizacji i nauczysz się tworzyć
+					smart kontrakty w języku Solidity.
+					Zdobędziesz praktyczne umiejętności w
+					zakresie zdalnego zarządzania serwerami
+					oraz konfiguracji środowisk do kopania
+					kryptowalut
+				</p>
 
-        <button class="bg-primary w-fit px-6 py-4 cursor-pointer text-background rounded-4xl transition hover:-translate-y-0.5 hover:bg-primary-muted">
-          Rozpocznij naukę
-        </button>
-      </div>
+				<button class="bg-primary w-fit px-6 py-4 cursor-pointer text-background rounded-4xl transition hover:-translate-y-0.5 hover:bg-primary-muted">
+					Rozpocznij naukę
+				</button>
+			</div>
 
-      <div class="col-span-6 w-full overflow-hidden">
-        <Terminal title="deploy.ts">
-          <Code code={code} lang="ts" theme="min-dark" wrap />
-        </Terminal>
-      </div>
-    </section>
-  </main>
+			<div class="col-span-6 w-full overflow-hidden flex-1">
+				<Terminal title="deploy.ts">
+					<Code
+						code={code}
+						lang="ts"
+						theme="min-dark"
+						wrap
+					/>
+				</Terminal>
+			</div>
+		</section>
+		<div class="underline mb-32"></div>
+		<section class="mb-32 grid justify-center text-center gap-28 justify-items-center max-w-4xl m-auto">
+			<div class="max-w-xl grid gap-3 m-auto">
+				<h2 class="py-2 px-4 bg-background-muted text-center w-min whitespace-nowrap rounded-xl text-xl mx-auto">
+					O nas
+				</h2>
+				<span class="opacity-80 text-sm">
+					Koło naukowe z blockchain
+				</span>
+				<h3 class="">
+					Zacznij uczyć się podstaw technologii
+					blockchain razem z nami w przyjaznym
+					zespole
+				</h3>
+			</div>
+			<div class="min-w-md m-auto">
+				<Terminal>
+					<p class="text-accent">$ whoami</p>
+					<p>Kolo_naukowe_4bytes</p>
+					<p class="text-accent">$ status</p>
+					<p class="text-[#FFBD2E]">
+						active - przyjmujemy nowych
+						czlonkow
+					</p>
+				</Terminal>
+			</div>
+			<div class="grid gap-3 text-left">
+				<h3 class="opacity-80 text-xl">
+					// JAK DZIALAMY
+				</h3>
+				<div class="grid grid-cols-3 gap-12">
+					<div class="p-5 bg-background-muted rounded-xl text-start">
+						<p class="text-[#FFBD2E] text-2xl mb-3">
+							{">_"}
+						</p>
+						<h3>Cotygodniowe spotkania</h3>
+						<p class="opacity-80 text-sm">
+							Live coding i omawianie
+							tematów
+						</p>
+					</div>
+					<div class="p-5 bg-background-muted rounded-xl text-start">
+						<p class="text-[#FFBD2E] text-2xl mb-3">
+							{">_"}
+						</p>
+						<h3>Praktyczne projekty</h3>
+						<p class="opacity-80 text-4">
+							DEX, DAO i inne budowane
+							razem
+						</p>
+					</div>
+					<div class="p-5 bg-background-muted rounded-xl text-start">
+						<p class="text-[#FFBD2E] text-2xl mb-3">
+							{">_"}
+						</p>
+						<h3>Mentoring</h3>
+						<p class="opacity-80 text-4">
+							Starsi czlonkowie
+							pomagaja nowym
+						</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="mb-12">
+					<h2 class="text-5xl mb-4 font-[800] tracking-1 text-left">
+						Łączy nas{" "}
+						<span class="text-primary">
+							blockchain
+						</span>
+						. Rozwijamy się przez praktykę.
+					</h2>
+					<p class="opacity-80 text-left">
+						4bytes to studenckie koło
+						naukowe skupione wokół
+						technologii blockchain, Solidity
+						i kryptowalut.
+					</p>
+				</div>
+				<div class="grid gap-6">
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+						<h3>
+							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
+							# Kim jesteśmy
+						</h3>
+						<p class="opacity-80 text-sm">
+							Jesteśmy grupą
+							studentów, których
+							połączyło jedno pytanie:
+							jak sieć bez właściciela
+							potrafi pilnować cudzych
+							pieniędzy. Przyszliśmy z
+							różnych lat i kierunków
+							— jednych wciągnęła
+							kryptografia, innych
+							rynek, resztę czysty
+							kod. Nie jesteśmy firmą
+							ani startupem: jesteśmy
+							kołem, w którym nikt nie
+							musi udawać, że wie
+							wszystko
+						</p>
+					</div>
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+						<h3>
+							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
+							# Co robimy
+						</h3>
+						<p class="opacity-80 text-sm">
+							Na cotygodniowych
+							spotkaniach przechodzimy
+							przez kolejne warstwy
+							technologii blockchain —
+							od podstaw działania
+							sieci i kryptografii,
+							przez pisanie smart
+							kontraktów w Solidity,
+							aż po budowę pełnych
+							aplikacji:
+							zdecentralizowanych
+							giełd (DEX), systemów
+							pożyczkowych i
+							organizacji DAO.{" "}
+							<span class="text-primary">
+								Każdy temat
+								kończymy
+								projektem
+							</span>
+							, który trafia do
+							naszego portfolio — to
+							nie jest nauka “do
+							szuflady”.
+						</p>
+					</div>
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+						<h3>
+							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
+							# Dla kogo
+						</h3>
+						<p class="opacity-80 text-sm">
+							Nie musisz umieć
+							programować blockchain,
+							żeby dołączyć —
+							wystarczą podstawy
+							programowania i{" "}
+							<span class="text-primary">
+								chcęć nauki
+							</span>
+							. Resztą zajmuje się
+							zespół: nad każdym
+							projektem czuwa
+							wykładowca-opiekun oraz
+							bardziej zaawansowani
+							studenci, którzy dzielą
+							się wiedzą z tymi,
+							którzy dopiero
+							zaczynają.
+						</p>
+					</div>
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+						<h3>
+							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
+							# Nasz cel
+						</h3>
+						<p class="opacity-80 text-sm">
+							Chcemy, żeby każdy
+							członek koła wychodził z
+							niego nie tylko ze
+							zrozumieniem, jak działa
+							blockchain, ale z
+							<span class="text-primary">
+								{
+									" realnym doświadczeniem "
+								}
+							</span>
+							zespołowym i projektami,
+							które może pokazać na
+							rozmowie o pracę czy
+							stażu.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="underline"></div>
+	</main>
 </BaseLayout>

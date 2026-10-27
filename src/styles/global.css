@@ -8,6 +8,7 @@
 @theme {
 	--color-*: initial;
 	--color-background: #131313;
+	--color-background-muted: #242424;
 	--color-muted: #949494;
 	--color-box: #4f4f4f;
 	--color-primary: #ffc91f;
@@ -58,6 +59,18 @@
 	margin-left: 0.45rem;
 	vertical-align: -0.1em;
 	animation: 0.8s infinite blink;
+}
+.underline {
+	min-width: 100%;
+	border-bottom: 2px solid #2d2d2d;
+	height: 1px;
+	mask-image: linear-gradient(
+		to right,
+		transparent,
+		#000 8%,
+		#000 92%,
+		transparent
+	);
 }
 @keyframes blink {
 	0%,
