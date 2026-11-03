@@ -8,6 +8,7 @@
 @theme {
 	--color-*: initial;
 	--color-background: #131313;
+	--color-background-primary: #2a2411;
 	--color-background-muted: #242424;
 	--color-muted: #949494;
 	--color-box: #4f4f4f;

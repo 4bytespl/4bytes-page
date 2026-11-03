@@ -1,0 +1,51 @@
+---
+interface Props {
+	svg: string;
+	name: string;
+	badge: string;
+	text: string;
+	topics?: string[];
+	language?: string;
+	gray?: boolean;
+}
+const { svg, name, badge, text, topics, language, gray = false } = Astro.props;
+---
+
+<li class={`[&:first-child>.underline]:hidden first:pt-4`}>
+	<div class="underline mb-4" />
+	<a
+		class={`grid gap-3 p-4 transition duration-150 ease-in cursor-pointer text-left ${gray ? "text-muted" : ""} hover:bg-background-muted rounded-lg`}
+		href="https://github.com/4bytespl"
+		target="_blank"
+	>
+		<div class="flex gap-3 items-center">
+			<img
+				src={svg}
+				alt="badge"
+				class={`${gray ? "opacity-50" : ""}`}
+			/>
+			<h3 class={`text-xl ${gray ? "" : "text-primary"}`}>
+				{name}
+			</h3>
+			<span class="border-2 text-sm text-muted opacity-80 rounded-xl p-1.5">
+				{badge}
+			</span>
+		</div>
+		<p class="text-muted">{text}</p>
+		{topics && (
+			<ul class="flex gap-3">
+				{topics.map((e: string) => (
+					<li class="text-primary bg-background-primary p-1.5 rounded-xl text-sm">
+						{e}
+					</li>
+				))}
+			</ul>
+		)}
+		{language && (
+			<div class="flex gap-2 items-center">
+				<span class="w-2 h-2 bg-primary rounded-full"></span>
+				<span>{language}</span>
+			</div>
+		)}
+	</a>
+</li>
