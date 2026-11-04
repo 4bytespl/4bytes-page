@@ -11,7 +11,7 @@ interface Props {
 const { svg, name, badge, text, topics, language, gray = false } = Astro.props;
 ---
 
-<li class={`[&:first-child>.underline]:hidden first:pt-4`}>
+<li class={`w-full overflow-auto [&:first-child>.underline]:hidden first:pt-4`}>
 	<div class="underline mb-4" />
 	<a
 		class={`grid gap-3 p-4 transition duration-150 ease-in cursor-pointer text-left ${gray ? "text-muted" : ""} hover:bg-background-muted rounded-lg`}

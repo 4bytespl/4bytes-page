@@ -2,6 +2,7 @@
 import { Code } from "astro:components";
 import Terminal from "../components/Terminal.astro";
 import ProjectElem from "../components/ProjectElem.astro";
+import AboutUsBlock from "../components/AboutUsBlock.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const code = `import hre from "hardhat";
@@ -105,7 +106,7 @@ async function getCampaignAbi() {
 				</button>
 			</div>
 
-			<div class="col-span-6 w-full overflow-hidden flex-1">
+			<div class="col-span-6 w-full flex-1">
 				<Terminal title="deploy.ts">
 					<Code
 						code={code}
@@ -116,13 +117,13 @@ async function getCampaignAbi() {
 				</Terminal>
 			</div>
 		</section>
-		<div class="underline mb-32" />
+		<div class="underline" />
 		<section
 			id="projects"
-			class="mb-32 grid justify-center text-center gap-28 justify-items-center max-w-4xl m-auto"
+			class="grid text-center gap-16 max-w-4xl m-auto"
 		>
 			<div class="max-w-xl grid gap-3 m-auto">
-				<h2 class="py-2 px-4 bg-background-muted text-center w-min whitespace-nowrap rounded-xl text-xl mx-auto">
+				<h2 class="py-2 px-4 bg-background-muted text-center w-min whitespace-nowrap rounded-xl text-lg sm:text-xl mx-auto">
 					Projekty
 				</h2>
 				<span class="opacity-80 text-sm">
@@ -133,7 +134,7 @@ async function getCampaignAbi() {
 					naszego kursu i czego się nauczymy
 				</h3>
 			</div>
-			<div class="p-6 border-2 border-background-muted rounded-xl text-left">
+			<div class="overflow-auto p-3 sm:p-6 border-2 border-background-muted rounded-xl text-left">
 				<div class="grid gap-4 mb-4">
 					<h3 class="text-xl">
 						4bytes /{" "}
@@ -190,10 +191,10 @@ async function getCampaignAbi() {
 				</ul>
 			</div>
 		</section>
-		<div class="underline mb-32" />
+		<div class="underline" />
 		<section
 			id="features"
-			class="mb-32 grid justify-center text-center gap-28 justify-items-center max-w-4xl m-auto"
+			class="grid text-center gap-16 max-w-4xl m-auto"
 		>
 			<div class="max-w-xl grid gap-3 m-auto">
 				<h2 class="py-2 px-4 bg-background-muted text-center w-min whitespace-nowrap rounded-xl text-xl mx-auto">
@@ -276,10 +277,10 @@ async function getCampaignAbi() {
 				<br />
 			</Terminal>
 		</section>
-		<div class="underline mb-32" />
+		<div class="underline" />
 		<section
 			id="about-us"
-			class="mb-32 grid justify-center text-center gap-28 justify-items-center max-w-4xl m-auto"
+			class="grid text-center gap-16 max-w-4xl m-auto"
 		>
 			<div class="max-w-xl grid gap-3 m-auto">
 				<h2 class="py-2 px-4 bg-background-muted text-center w-min whitespace-nowrap rounded-xl text-xl mx-auto">
@@ -294,7 +295,7 @@ async function getCampaignAbi() {
 					zespole
 				</h3>
 			</div>
-			<div class="min-w-md m-auto">
+			<div class="sm:w-md m-auto">
 				<Terminal>
 					<p class="text-accent">$ whoami</p>
 					<p>Kolo_naukowe_4bytes</p>
@@ -309,42 +310,24 @@ async function getCampaignAbi() {
 				<h3 class="opacity-80 text-xl">
 					// JAK DZIALAMY
 				</h3>
-				<div class="grid grid-cols-3 gap-12">
-					<div class="p-5 bg-background-muted rounded-xl text-start">
-						<p class="text-[#FFBD2E] text-2xl mb-3">
-							{">_"}
-						</p>
-						<h3>Cotygodniowe spotkania</h3>
-						<p class="opacity-80 text-sm">
-							Live coding i omawianie
-							tematów
-						</p>
-					</div>
-					<div class="p-5 bg-background-muted rounded-xl text-start">
-						<p class="text-[#FFBD2E] text-2xl mb-3">
-							{">_"}
-						</p>
-						<h3>Praktyczne projekty</h3>
-						<p class="opacity-80 text-4">
-							DEX, DAO i inne budowane
-							razem
-						</p>
-					</div>
-					<div class="p-5 bg-background-muted rounded-xl text-start">
-						<p class="text-[#FFBD2E] text-2xl mb-3">
-							{">_"}
-						</p>
-						<h3>Mentoring</h3>
-						<p class="opacity-80 text-4">
-							Starsi czlonkowie
-							pomagaja nowym
-						</p>
-					</div>
+				<div class="grid md:grid-cols-3 gap-6 md:gap-12">
+					<AboutUsBlock
+						title="Cotygodniowe spotkania"
+						text="Live coding i omawianie tematów"
+					/>
+					<AboutUsBlock
+						title="Praktyczne projekty"
+						text="DEX, DAO i inne budowane razem"
+					/>
+					<AboutUsBlock
+						title="Mentoring"
+						text="Starsi czlonkowie pomagaja nowym"
+					/>
 				</div>
 			</div>
 			<div>
 				<div class="mb-12">
-					<h2 class="text-5xl mb-4 font-[800] tracking-1 text-left">
+					<h2 class="text-4xl md:text-5xl mb-4 font-[800] tracking-1 text-left">
 						Łączy nas{" "}
 						<span class="text-primary">
 							blockchain
@@ -359,7 +342,7 @@ async function getCampaignAbi() {
 					</p>
 				</div>
 				<div class="grid gap-6">
-					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4 transition duration-200 ease-in hover:bg-background-primary">
 						<h3>
 							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
 							# Kim jesteśmy
@@ -382,7 +365,7 @@ async function getCampaignAbi() {
 							wszystko
 						</p>
 					</div>
-					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4 transition duration-200 ease-in hover:bg-background-primary">
 						<h3>
 							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
 							# Co robimy
@@ -413,7 +396,7 @@ async function getCampaignAbi() {
 							szuflady”.
 						</p>
 					</div>
-					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4 transition duration-200 ease-in hover:bg-background-primary">
 						<h3>
 							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
 							# Dla kogo
@@ -438,7 +421,7 @@ async function getCampaignAbi() {
 							zaczynają.
 						</p>
 					</div>
-					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4">
+					<div class="bg-background-muted p-6 rounded-xl text-left grid gap-4 transition duration-200 ease-in hover:bg-background-primary">
 						<h3>
 							<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>{" "}
 							# Nasz cel
@@ -466,7 +449,7 @@ async function getCampaignAbi() {
 		<div class="underline mb-16" />
 	</main>
 	<footer id="contacts" class="max-w-4xl m-auto">
-		<div class="grid grid-cols-3 gap-32 justify-between mb-6">
+		<div class="grid sm:grid-cols-3 gap-8 sm:gap-32 justify-between mb-6">
 			<div>
 				<h3>
 					<span class="text-accent">$</span>{" "}
@@ -479,7 +462,7 @@ async function getCampaignAbi() {
 			</div>
 			<nav class="grid gap-2 text-left">
 				<p class="opacity-80">// Nawigacja</p>
-				<ul class="grid gap-4">
+				<ul class="grid gap-2 sm:gap-4">
 					<li class="transition hover:opacity-85 hover:-translate-y-0.5">
 						<a href="#projects">Projekty</a>
 					</li>
@@ -496,7 +479,7 @@ async function getCampaignAbi() {
 			</nav>
 			<nav class="grid gap-2 text-left">
 				<p class="opacity-80">// Kontakt</p>
-				<ul class="grid gap-4">
+				<ul class="grid gap-2 sm:gap-4">
 					<li class="transition hover:opacity-85 hover:-translate-y-0.5">
 						<a
 							href="https://github.com/4bytespl"

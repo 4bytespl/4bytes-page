@@ -1,0 +1,13 @@
+---
+interface Props {
+	title: string;
+	text: string;
+}
+const { title, text } = Astro.props;
+---
+
+<div class="p-5 bg-background-muted rounded-xl text-start border-primary transition-all hover:bg-background-primary hover:border-2">
+	<p class="text-[#FFBD2E] text-2xl mb-3">{">_"}</p>
+	<h3>{title}</h3>
+	<p class="opacity-80 text-sm">{text}</p>
+</div>
