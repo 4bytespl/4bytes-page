@@ -8,7 +8,7 @@ import { defineConfig, fontProviders } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://4bytes.pl",
-	// base: "/4bytes-page",
+	base: "/4bytes-page",
 	prefetch: true,
 	vite: {
 		// Only for local development with cloudflare tunnel
