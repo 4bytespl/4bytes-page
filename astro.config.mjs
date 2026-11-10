@@ -25,7 +25,7 @@ export default defineConfig({
 			cssVariable: "--font-sans",
 			weights: [800],
 			styles: ["normal"],
-			subsets: ["latin"],
+			subsets: ["latin-ext", "latin"],
 		},
 		{
 			provider: fontProviders.fontsource(),
@@ -33,7 +33,7 @@ export default defineConfig({
 			cssVariable: "--font-mono",
 			weights: [400, 500, 600, 700],
 			styles: ["normal"],
-			subsets: ["latin"],
+			subsets: ["latin-ext", "latin"],
 		},
 	],
 	integrations: [sitemap()],
